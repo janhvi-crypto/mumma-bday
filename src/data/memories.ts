@@ -5,6 +5,13 @@ export interface Memory {
   audio?: string;
 }
 
+export interface VideoMemory {
+  id: number;
+  video: string;
+  title: string;
+  caption: string;
+}
+
 // Add your photos in src/assets/photos/ folder
 // Add your audio files in public/audio/ folder
 export const memories: Memory[] = [
@@ -57,4 +64,26 @@ export const timelineMemories = [
     icon: "Star",
     text: "Aap hi toh ho jo har din ko special banati ho Mumma ✨",
   },
+];
+
+// Add your video files in public/videos/ folder
+export const videoMemories: VideoMemory[] = [
+  {
+    id: 1,
+    video: "/videos/memory1.mp4",
+    title: "Family Moments",
+    caption: "Papa aur Mumma ke saath woh haseen pal… kuch khaas yaadon ka video 🎥❤️"
+  },
+  {
+    id: 2,
+    video: "/videos/memory2.mp4",
+    title: "Special Day",
+    caption: "Mumma ki muskurahat… bas yahi toh sabse bada treasure hai 💖"
+  },
+  {
+    id: 3,
+    video: "/videos/memory3.mp4",
+    title: "Together Forever",
+    caption: "Family time is the best time… har pal special ban jata hai Mumma ke saath ✨"
+  }
 ];
