@@ -19,31 +19,31 @@ export const memories: Memory[] = [
     id: 1,
     photo: "/photos/family1.jpg",
     story: "Yeh wali photo Mussorie trip ki hai… Mei, aap aur yeh haseen vadiya ❤️",
-    audio: "/audios/memory1.mp3"
+    audio: "/audios/memory3.mp3"
   },
   {
     id: 2,
     photo: "/photos/family2.jpg", 
     story: " Cool Party, Cool Props 🌅",
-    audio: "/audios/memory2.mp3"
+   
   },
   {
     id: 3,
     photo: "/photos/family3.jpg",
     story: " Manali trip - first time snowfall experience. With Popatlal ka Umbrella lol ❤️",
-    audio: "/audios/memory3.mp3"
+    
   },
   {
     id: 4,
     photo: "/photos/family4.jpg",
     story: "  Shimla ki garmi badhne ka raaz kahin aap toh nhi :)",
-    audio: "/audios/memory4.mp3"
+  
   },
   {
     id: 5,
     photo: "/photos/family5.jpg",
     story: " Vaah, Vaah Kya acting ki hai ✨. Kasam se acting ke baadshah ho aap log hahah XD",
-    audio: "/audios/memory5.mp3"
+    
   }
 ];
 
