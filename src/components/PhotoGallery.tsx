@@ -98,9 +98,11 @@ const PhotoGallery = () => {
                 className="bg-white p-3 shadow-card rounded-lg cursor-pointer hover:shadow-soft transition-all duration-300"
               >
                 <div className="aspect-square bg-gradient-card rounded overflow-hidden mb-3">
-                  <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                    📸
-                  </div>
+                  <img 
+                    src={memory.photo} 
+                    alt={`Memory ${memory.id}`}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <p className="text-center font-handwriting text-primary text-sm">
                   Memory {memory.id}
@@ -136,9 +138,11 @@ const PhotoGallery = () => {
               </button>
 
               <div className="aspect-square bg-gradient-card rounded-lg overflow-hidden mb-6">
-                <div className="w-full h-full flex items-center justify-center text-muted-foreground text-6xl">
-                  📸
-                </div>
+                <img 
+                  src={selectedMemory.photo} 
+                  alt={`Memory ${selectedMemory.id}`}
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               <p className="font-body text-lg md:text-xl text-foreground leading-relaxed text-center">
