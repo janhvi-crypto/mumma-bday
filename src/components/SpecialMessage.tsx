@@ -36,7 +36,7 @@ const SpecialMessage = () => {
               </p>
               
               <p className="text-center">
-                Aapke haath idli sambar aur dosa (hint de rhi hu aapko), har zodiac signs ki baatein, har din ka daant –<br />
+                Aapke haath ki idli sambar aur dosa (hint de rhi hu aapko), har zodiac signs ki baatein, har din ka daant –<br />
                 yeh sab hi toh hai jo ghar ko ghar banata hai.
               </p>
 
