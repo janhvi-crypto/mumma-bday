@@ -77,9 +77,11 @@ const VideoMemories = () => {
                 className="bg-white p-3 shadow-card rounded-lg cursor-pointer hover:shadow-soft transition-all duration-300"
               >
                 <div className="aspect-video bg-gradient-card rounded overflow-hidden mb-3 relative group">
-                  <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                    🎥
-                  </div>
+                  <video 
+                    src={video.video}
+                    className="w-full h-full object-cover"
+                    preload="metadata"
+                  />
                   <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <Play className="w-12 h-12 text-white" />
                   </div>
