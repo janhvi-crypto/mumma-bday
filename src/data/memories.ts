@@ -17,7 +17,7 @@ export interface VideoMemory {
 export const memories: Memory[] = [
   {
     id: 1,
-    photo: "family1.jpg",
+    photo: "/photos/family1.jpg",
     story: "Yeh wali photo Mussorie trip ki hai… Mei, aap aur yeh haseen vadiya ❤️",
     audio: "/audio/memory1.mp3"
   },
