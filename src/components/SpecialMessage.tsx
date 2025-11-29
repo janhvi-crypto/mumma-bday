@@ -3,8 +3,8 @@ import { Heart } from "lucide-react";
 
 const SpecialMessage = () => {
   return (
-    <section className="py-16 lg:py-24 px-4 lg:px-8 bg-gradient-to-b from-soft-pink to-blush">
-      <div className="container mx-auto max-w-6xl">
+    <section className="py-20 px-4 bg-gradient-to-b from-soft-pink to-blush">
+      <div className="container mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -26,11 +26,11 @@ const SpecialMessage = () => {
             transition={{ delay: 0.2 }}
             className="relative z-10"
           >
-            <h3 className="font-display text-4xl md:text-5xl lg:text-6xl text-primary text-center mb-10 font-semibold">
-              Mumma ke liye kuch khaas baatein...
+            <h3 className="font-handwriting text-4xl md:text-5xl text-primary text-center mb-8">
+              Mumma ke liye kuch khaas baatein... ❤️
             </h3>
 
-            <div className="space-y-6 lg:space-y-8 font-body text-lg md:text-xl lg:text-2xl text-foreground/90 leading-relaxed">
+            <div className="space-y-6 font-body text-lg md:text-xl text-foreground/90 leading-relaxed">
               <p className="text-center">
                 Mumma, aap itni amazing ho ki words kam pad jaate hain...
               </p>
@@ -42,7 +42,7 @@ const SpecialMessage = () => {
 
              
 
-              <p className="text-center font-playful text-2xl lg:text-3xl text-primary mt-10">
+              <p className="text-center font-handwriting text-2xl text-primary mt-8">
                 Thank you for being YOU, Mumma.<br />
                 Aap ho, toh sab kuch perfect hai ❤️ ✨
               </p>

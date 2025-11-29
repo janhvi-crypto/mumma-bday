@@ -40,44 +40,35 @@ const HeroSection = () => {
         }}
       />
 
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center max-w-5xl mx-auto"
+          className="text-center max-w-4xl mx-auto"
         >
           <motion.div
             animate={{ scale: [1, 1.1, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="inline-block mb-8"
+            className="inline-block mb-6"
           >
-            <Heart className="w-20 h-20 lg:w-24 lg:h-24 text-primary fill-primary mx-auto drop-shadow-lg" />
+            <Heart className="w-16 h-16 text-primary fill-primary mx-auto" />
           </motion.div>
 
           <motion.h1
-            className="font-display text-6xl md:text-8xl lg:text-9xl text-primary mb-8 leading-tight tracking-tight"
+            className="font-handwriting text-5xl md:text-7xl text-primary mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            Happy Birthday
+            Happy Birthday Mumma ❤️
           </motion.h1>
-          
-          <motion.h2
-            className="font-handwriting text-5xl md:text-7xl lg:text-8xl text-primary mb-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          >
-            Mumma ❤️
-          </motion.h2>
 
           <motion.p
-            className="font-body text-xl md:text-2xl lg:text-3xl text-foreground/80 leading-relaxed max-w-3xl mx-auto"
+            className="font-body text-xl md:text-2xl text-foreground/80 leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.7, duration: 0.8 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
           >
             Aaj ka din sirf aapke liye…
             <br />
@@ -87,11 +78,11 @@ const HeroSection = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1.2, duration: 0.8 }}
-            className="mt-16"
+            transition={{ delay: 1, duration: 0.8 }}
+            className="mt-12"
           >
-            <div className="inline-block px-10 py-5 bg-white/70 backdrop-blur-sm rounded-full shadow-soft hover:shadow-card transition-all duration-300">
-              <p className="font-playful text-2xl lg:text-3xl text-primary">
+            <div className="inline-block px-8 py-4 bg-white/60 backdrop-blur-sm rounded-full shadow-soft">
+              <p className="font-handwriting text-2xl text-primary">
                 Scroll down for your surprise ✨
               </p>
             </div>
