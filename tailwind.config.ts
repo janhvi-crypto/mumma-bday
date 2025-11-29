@@ -102,6 +102,10 @@ export default {
           "0%": { opacity: "0", transform: "translateY(30px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        "bounce": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -110,6 +114,7 @@ export default {
         "sparkle": "sparkle 2s ease-in-out infinite",
         "swing": "swing 2s ease-in-out infinite",
         "fade-in-up": "fade-in-up 0.6s ease-out",
+        "bounce": "bounce 2s ease-in-out infinite",
       },
     },
   },
