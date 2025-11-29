@@ -18,7 +18,7 @@ const Footer = () => {
           </div>
 
           <p className="font-handwriting text-2xl md:text-3xl text-primary mb-2">
-            Made with Pyaar by your Agyakaari Putri ❤️
+            Made with pyaar by your agyakaari putri ❤️
           </p>
           
           <p className="font-body text-lg text-foreground/70">
