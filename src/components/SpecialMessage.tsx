@@ -36,18 +36,15 @@ const SpecialMessage = () => {
               </p>
               
               <p className="text-center">
-                Aapki har subah ki chai, har raat ki baatein, har din ka pyaar –<br />
+                Aapke haath idli sambar aur dosa (hint de rhi hu aapko), har zodiac signs ki baatein, har din ka daant –<br />
                 yeh sab hi toh hai jo ghar ko ghar banata hai.
               </p>
 
-              <p className="text-center">
-                Papa ke saath aapki smile dekh kar lagta hai –<br />
-                yeh duniya ki sabse beautiful team hai ✨
-              </p>
+             
 
               <p className="text-center font-handwriting text-2xl text-primary mt-8">
                 Thank you for being YOU, Mumma.<br />
-                Aap ho, toh sab kuch perfect hai ❤️
+                Aap ho, toh sab kuch perfect hai ❤️ ✨
               </p>
             </div>
           </motion.div>
