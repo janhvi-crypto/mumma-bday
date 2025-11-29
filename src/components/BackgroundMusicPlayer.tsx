@@ -27,7 +27,7 @@ const BackgroundMusicPlayer = () => {
   return (
     <>
       <audio ref={audioRef} loop>
-        <source src="/audio/background-music.mp3" type="audio/mpeg" />
+        <source src="/audios/background-music.mp3" type="audio/mpeg" />
       </audio>
 
       <AnimatePresence>
