@@ -1,23 +1,44 @@
-import HeroSection from "@/components/HeroSection";
-import PhotoGallery from "@/components/PhotoGallery";
-import VideoMemories from "@/components/VideoMemories";
-import Timeline from "@/components/Timeline";
-import SpecialMessage from "@/components/SpecialMessage";
-import Footer from "@/components/Footer";
-import BackgroundMusicPlayer from "@/components/BackgroundMusicPlayer";
+import { useEffect, useRef } from "react";
 
-const Index = () => {
+export default function BackgroundMusicPlayer() {
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+
+    // Ensure volume is not too loud
+    audio.volume = 0.5;
+
+    // Function to start playback
+    const playAudio = () => {
+      audio.play().catch(() => {});
+      // Remove listeners after it starts once
+      window.removeEventListener("click", playAudio);
+      window.removeEventListener("scroll", playAudio);
+      window.removeEventListener("touchstart", playAudio);
+    };
+
+    // Try autoplay immediately (some browsers may block this)
+    audio.play().catch(() => {});
+
+    // Fallback listeners for user gestures
+    window.addEventListener("click", playAudio);
+    window.addEventListener("scroll", playAudio);
+    window.addEventListener("touchstart", playAudio);
+
+    return () => {
+      window.removeEventListener("click", playAudio);
+      window.removeEventListener("scroll", playAudio);
+      window.removeEventListener("touchstart", playAudio);
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen font-body">
-      <BackgroundMusicPlayer />
-      <HeroSection />
-      <PhotoGallery />
-      <VideoMemories />
-      <Timeline />
-      <SpecialMessage />
-      <Footer />
-    </div>
+    <audio
+      ref={audioRef}
+      src="/audios/background-music.mp3"
+      loop
+      hidden
+    />
   );
-};
-
-export default Index;
+}
