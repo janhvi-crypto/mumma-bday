@@ -13,6 +13,12 @@ const PhotoGallery = () => {
   const slideshowTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const handlePhotoClick = (memory: Memory) => {
+    // Stop previous audio if playing
+    if (audioPlaying) {
+      audioPlaying.pause();
+      audioPlaying.currentTime = 0;
+    }
+
     // Trigger confetti
     const duration = 3 * 1000;
     const animationEnd = Date.now() + duration;
@@ -94,7 +100,7 @@ const PhotoGallery = () => {
     if (isSlideshow && selectedMemory) {
       slideshowTimerRef.current = setTimeout(() => {
         goToNext();
-      }, 5000);
+      }, 20000); // 20 seconds per slide
     }
 
     return () => {
