@@ -10,11 +10,12 @@ const PhotoGallery = () => {
   const [audioPlaying, setAudioPlaying] = useState<HTMLAudioElement | null>(null);
   const [isSlideshow, setIsSlideshow] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [slideshowAudio, setSlideshowAudio] = useState<HTMLAudioElement | null>(null);
   const slideshowTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  const handlePhotoClick = (memory: Memory) => {
-    // Stop previous audio if playing
-    if (audioPlaying) {
+  const handlePhotoClick = (memory: Memory, skipAudio = false) => {
+    // Stop previous audio if playing (but not during slideshow)
+    if (audioPlaying && !isSlideshow) {
       audioPlaying.pause();
       audioPlaying.currentTime = 0;
     }
@@ -50,8 +51,8 @@ const PhotoGallery = () => {
       });
     }, 250);
 
-    // Play audio if available
-    if (memory.audio) {
+    // Play audio if available (but not during slideshow)
+    if (memory.audio && !skipAudio && !isSlideshow) {
       const audio = new Audio(memory.audio);
       audio.play().catch(err => console.log("Audio playback failed:", err));
       setAudioPlaying(audio);
@@ -66,6 +67,11 @@ const PhotoGallery = () => {
       audioPlaying.currentTime = 0;
       setAudioPlaying(null);
     }
+    if (slideshowAudio) {
+      slideshowAudio.pause();
+      slideshowAudio.currentTime = 0;
+      setSlideshowAudio(null);
+    }
     setSelectedMemory(null);
     setIsSlideshow(false);
   };
@@ -73,7 +79,14 @@ const PhotoGallery = () => {
   const startSlideshow = () => {
     setIsSlideshow(true);
     setCurrentIndex(0);
-    handlePhotoClick(memories[0]);
+    
+    // Play memory3 audio for the entire slideshow
+    const audio = new Audio('/audios/memory3.mp3');
+    audio.loop = true;
+    audio.play().catch(err => console.log("Slideshow audio playback failed:", err));
+    setSlideshowAudio(audio);
+    
+    handlePhotoClick(memories[0], true);
   };
 
   const stopSlideshow = () => {
@@ -81,18 +94,23 @@ const PhotoGallery = () => {
     if (slideshowTimerRef.current) {
       clearTimeout(slideshowTimerRef.current);
     }
+    if (slideshowAudio) {
+      slideshowAudio.pause();
+      slideshowAudio.currentTime = 0;
+      setSlideshowAudio(null);
+    }
   };
 
   const goToNext = () => {
     const nextIndex = (currentIndex + 1) % memories.length;
     setCurrentIndex(nextIndex);
-    handlePhotoClick(memories[nextIndex]);
+    handlePhotoClick(memories[nextIndex], true);
   };
 
   const goToPrevious = () => {
     const prevIndex = currentIndex === 0 ? memories.length - 1 : currentIndex - 1;
     setCurrentIndex(prevIndex);
-    handlePhotoClick(memories[prevIndex]);
+    handlePhotoClick(memories[prevIndex], true);
   };
 
   // Auto-advance slideshow
@@ -100,7 +118,7 @@ const PhotoGallery = () => {
     if (isSlideshow && selectedMemory) {
       slideshowTimerRef.current = setTimeout(() => {
         goToNext();
-      }, 20000); // 20 seconds per slide
+      }, 10000); // 10 seconds per slide
     }
 
     return () => {
