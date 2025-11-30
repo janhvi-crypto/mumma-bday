@@ -63,6 +63,7 @@ export default {
       fontFamily: {
         'handwriting': ['Dancing Script', 'cursive'],
         'body': ['Quicksand', 'sans-serif'],
+        'display': ['Great Vibes', 'cursive'],
       },
       borderRadius: {
         lg: "var(--radius)",

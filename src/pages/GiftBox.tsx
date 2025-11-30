@@ -67,7 +67,7 @@ const GiftBox = () => {
       </div>
 
       <div className="text-center z-10 px-4">
-        <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-primary mb-8 animate-fade-in">
+        <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-primary mb-8 animate-fade-in drop-shadow-lg">
           A Special Surprise Awaits ✨
         </h1>
         
