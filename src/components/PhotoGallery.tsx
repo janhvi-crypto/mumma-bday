@@ -234,14 +234,14 @@ const PhotoGallery = () => {
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ duration: 0.5 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-white rounded-2xl p-3 max-w-2xl w-full shadow-soft relative overflow-hidden max-h-[90vh] overflow-y-auto"
+              className="bg-white rounded-3xl p-4 md:p-6 max-w-2xl w-full shadow-soft relative overflow-hidden max-h-[90vh] overflow-y-auto"
             >
               {/* Decorative corner elements */}
               <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-primary/20 to-transparent rounded-br-full" />
               <div className="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-gold/20 to-transparent rounded-tl-full" />
 
               {/* Header with controls */}
-              <div className="flex items-center justify-between mb-3 relative z-10">
+              <div className="flex items-center justify-between mb-6 relative z-10">
                 <div className="flex items-center gap-2">
                   {isSlideshow && (
                     <Button
@@ -272,7 +272,7 @@ const PhotoGallery = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6 }}
-                className="aspect-square max-h-[55vh] bg-gradient-card rounded-xl overflow-hidden mb-3 shadow-card relative"
+                className="aspect-square max-h-[50vh] bg-gradient-card rounded-2xl overflow-hidden mb-4 shadow-card relative"
               >
                 <img 
                   src={selectedMemory.photo} 
@@ -291,7 +291,7 @@ const PhotoGallery = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="relative z-10"
               >
-                <p className="font-body text-base md:text-lg text-foreground leading-relaxed text-center px-2">
+                <p className="font-body text-lg md:text-xl text-foreground leading-relaxed text-center px-4">
                   {selectedMemory.story}
                 </p>
 
@@ -310,7 +310,7 @@ const PhotoGallery = () => {
 
               {/* Navigation buttons for slideshow */}
               {isSlideshow && (
-                <div className="flex items-center justify-center gap-4 mt-4">
+                <div className="flex items-center justify-center gap-4 mt-8">
                   <Button
                     onClick={goToPrevious}
                     variant="outline"
