@@ -234,7 +234,7 @@ const PhotoGallery = () => {
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ duration: 0.5 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-white rounded-3xl p-6 md:p-10 max-w-3xl w-full shadow-soft relative overflow-hidden"
+              className="bg-white rounded-3xl p-4 md:p-6 max-w-2xl w-full shadow-soft relative overflow-hidden max-h-[90vh] overflow-y-auto"
             >
               {/* Decorative corner elements */}
               <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-primary/20 to-transparent rounded-br-full" />
@@ -272,7 +272,7 @@ const PhotoGallery = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6 }}
-                className="aspect-square bg-gradient-card rounded-2xl overflow-hidden mb-6 shadow-card relative"
+                className="aspect-square max-h-[50vh] bg-gradient-card rounded-2xl overflow-hidden mb-4 shadow-card relative"
               >
                 <img 
                   src={selectedMemory.photo} 
