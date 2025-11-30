@@ -272,7 +272,7 @@ const PhotoGallery = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6 }}
-                className="aspect-square max-h-[50vh] bg-gradient-card rounded-2xl overflow-hidden mb-4 shadow-card relative"
+                className="aspect-square max-h-[40vh] bg-gradient-card rounded-xl overflow-hidden mb-4 shadow-card relative"
               >
                 <img 
                   src={selectedMemory.photo} 
@@ -280,7 +280,7 @@ const PhotoGallery = () => {
                   className="w-full h-full object-cover"
                 />
                 {/* Decorative frame overlay */}
-                <div className="absolute inset-0 border-8 border-white/40 rounded-2xl pointer-events-none" />
+                <div className="absolute inset-0 border-4 border-white/40 rounded-xl pointer-events-none" />
               </motion.div>
 
               {/* Story */}
