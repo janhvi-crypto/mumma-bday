@@ -187,30 +187,19 @@ const PhotoGallery = () => {
               transition={{ delay: index * 0.1 }}
               className="relative"
             >
-              {/* Hanging string with decorative elements */}
-              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
-                <div className="w-0.5 h-12 bg-gradient-to-b from-gold/60 to-gold/30" />
-                <motion.div 
-                  className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gold rounded-full shadow-sm"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                >
-                  <div className="absolute inset-1 bg-gold/50 rounded-full" />
-                </motion.div>
-              </div>
+              {/* Hanging string */}
+              <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-0.5 h-10 bg-gold/40" />
+              <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-gold rounded-full" />
 
               <motion.div
-                whileHover={{ y: -12, rotate: 3, scale: 1.08 }}
+                whileHover={{ y: -10, rotate: 2, scale: 1.05 }}
                 animate={{ rotate: index % 2 === 0 ? [-2, 2] : [2, -2] }}
                 transition={{
-                  rotate: { duration: 2.5, repeat: Infinity, repeatType: "reverse" }
+                  rotate: { duration: 2, repeat: Infinity, repeatType: "reverse" }
                 }}
                 onClick={() => handlePhotoClick(memory)}
-                className="group bg-white p-4 shadow-card rounded-2xl cursor-pointer hover:shadow-soft transition-all duration-300 border-2 border-primary/10 relative overflow-hidden"
+                className="group bg-white p-3 shadow-card rounded-xl cursor-pointer hover:shadow-soft transition-all duration-300 border border-primary/10"
               >
-                {/* Decorative corner accent */}
-                <div className="absolute top-0 right-0 w-10 h-10 bg-gradient-to-bl from-gold/10 to-transparent rounded-bl-2xl" />
-                <div className="absolute bottom-0 left-0 w-8 h-8 bg-gradient-to-tr from-primary/10 to-transparent rounded-tr-2xl" />
                 <div className="aspect-square bg-gradient-card rounded-lg overflow-hidden mb-3 relative">
                   <img 
                     src={memory.photo} 
@@ -245,34 +234,11 @@ const PhotoGallery = () => {
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ duration: 0.5 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-white rounded-3xl p-6 md:p-10 max-w-3xl w-full shadow-soft relative overflow-hidden border-4 border-white/50"
+              className="bg-white rounded-3xl p-6 md:p-10 max-w-3xl w-full shadow-soft relative overflow-hidden"
             >
               {/* Decorative corner elements */}
-              <div className="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-primary/20 to-transparent rounded-br-full" />
-              <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-gold/20 to-transparent rounded-tl-full" />
-              <div className="absolute top-0 right-0 w-20 h-20 border-8 border-primary/5 rounded-bl-full" />
-              <div className="absolute bottom-0 left-0 w-16 h-16 border-8 border-gold/5 rounded-tr-full" />
-              
-              {/* Floating mini hearts */}
-              {[...Array(4)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute w-1 h-1 bg-primary/30 rounded-full"
-                  style={{
-                    left: `${15 + i * 25}%`,
-                    top: `${10 + (i % 2) * 80}%`,
-                  }}
-                  animate={{
-                    opacity: [0.2, 0.6, 0.2],
-                    scale: [1, 1.5, 1],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: i * 0.5,
-                  }}
-                />
-              ))}
+              <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-primary/20 to-transparent rounded-br-full" />
+              <div className="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-gold/20 to-transparent rounded-tl-full" />
 
               {/* Header with controls */}
               <div className="flex items-center justify-between mb-6 relative z-10">
@@ -300,7 +266,7 @@ const PhotoGallery = () => {
                 </button>
               </div>
 
-              {/* Image with enhanced frame */}
+              {/* Image */}
               <motion.div
                 key={`img-${selectedMemory.id}`}
                 initial={{ opacity: 0 }}
@@ -313,11 +279,8 @@ const PhotoGallery = () => {
                   alt={`Memory ${selectedMemory.id}`}
                   className="w-full h-full object-cover"
                 />
-                {/* Decorative frame overlay with gradient */}
-                <div className="absolute inset-0 border-8 border-white/50 rounded-2xl pointer-events-none" />
-                <div className="absolute inset-0 shadow-inner pointer-events-none" style={{
-                  boxShadow: 'inset 0 0 30px rgba(0,0,0,0.1)'
-                }} />
+                {/* Decorative frame overlay */}
+                <div className="absolute inset-0 border-8 border-white/40 rounded-2xl pointer-events-none" />
               </motion.div>
 
               {/* Story */}
