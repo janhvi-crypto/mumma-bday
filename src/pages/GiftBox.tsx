@@ -87,19 +87,12 @@ const GiftBox = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-pink-300 via-gold-300 to-pink-300 rounded-full blur-2xl opacity-50 group-hover:opacity-75 transition-opacity animate-pulse" />
             
             {/* Main gift box */}
-            <div className="relative bg-gradient-to-br from-pink-100 to-gold-100 p-12 md:p-16 rounded-3xl shadow-2xl border-4 border-gold-200 group-hover:border-gold-300 transition-all duration-300">
+            <div className="relative bg-gradient-to-br from-pink-100 via-cream-50 to-gold-100 p-16 md:p-20 rounded-3xl shadow-2xl border-4 border-gold-300 group-hover:border-gold-400 transition-all duration-300 group-hover:shadow-3xl">
               <Gift 
-                className="text-primary mx-auto animate-bounce" 
-                size={120}
-                strokeWidth={1.5}
+                className="text-primary mx-auto animate-bounce drop-shadow-lg" 
+                size={140}
+                strokeWidth={1.8}
               />
-              
-              {/* Ribbon effect */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-gradient-to-br from-pink-400 to-pink-500 rounded-full opacity-80 flex items-center justify-center shadow-lg">
-                <div className="w-20 h-20 bg-gradient-to-br from-pink-300 to-pink-400 rounded-full flex items-center justify-center">
-                  <Sparkles className="text-white" size={32} />
-                </div>
-              </div>
             </div>
           </div>
           
